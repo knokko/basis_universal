@@ -1,0 +1,1 @@
+JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::") bash -c 'g++ -c -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/linux/ compress_bc7.cpp -o bc7-compressor.o -O3' && g++ -shared -fPIC -o libbc7-compressor.so bc7-compressor.o -lc
